@@ -1,0 +1,22 @@
+.data
+yay: .asciiz "Made it!\n"
+nay: .asciiz "Didn't make it :(\n"
+new_line: .asciiz "\n"
+.text
+
+gen $t0, 100
+gen $t1, 99
+gen $t2, 1
+addp $t0, 0
+equiv $t0, $t1, Branched
+
+End:
+ring nay
+runto branch_end
+
+Branched:
+ring yay
+branch_end:
+
+
+
